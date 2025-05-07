@@ -173,12 +173,34 @@
  max-width: 800px;
  margin: 0 auto;
  }
+ .information{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: left;
+ }
+
  </style>
  </head>
  <body>
  <header>
  <div class="vangogh"></div>
  </header>
+ <div class="information">
+    <h1>Le site demande beaucoup de performance et peut ne pas fonctionner sur certains appareils.</h1>
+    <h1>Il est conseillé d'utiliser un ordinateur pour lancer le site.</h1>
+    <button class="button" id="information">Compris !</button>
+ </div>
+
+
  <!-- Chargement du polyfill pour les import maps -->
  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
  <script type="importmap">
@@ -328,6 +350,10 @@
  top: document.body.scrollHeight,
  behavior: 'smooth'
  });
+ });
+
+ document.getElementById('information').addEventListener('click', function() {
+    document.querySelector('.information').style.display = 'none';
  });
  </script>
  </body>
